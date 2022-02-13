@@ -1,7 +1,7 @@
 How to use Xaldigital API from centos
 1-run in console
 	docker-compose up
-2-In other console (but in xaldigital folder)
+2-In other console (but in xalApi folder)
 	docker-compose run --rm centos bash
 
 3-Now check for the URL where de "web_1" is listen
