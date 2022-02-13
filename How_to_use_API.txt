@@ -62,7 +62,7 @@ FOR UNIT TESTING AND COVERAGE
 	Then in test_coverage>test_cov_api.py you must have to replace URL_API with the current URL-PATH where "web_1".
 	
 	coverage run test_cov_api.py
-
+	coverage report
 
 	
 
