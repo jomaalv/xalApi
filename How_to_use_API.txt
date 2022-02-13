@@ -9,7 +9,7 @@ How to use Xaldigital API from centos
   
 API REQUEST'S with curl command
 Check if API is available with
-	curl URL-PATH/PING
+	curl URL-PATH/ping
 	
 Read 1 row especifies the first_name
 	curl URL-PATH/API/READ/<first_name>
@@ -60,6 +60,8 @@ FOR UNIT TESTING AND COVERAGE
 	pip install coverage
 	
 	Then in test_coverage>test_cov_api.py you must have to replace URL_API with the current URL-PATH where "web_1".
+	
+	coverage run test_cov_api.py
 
 
 	
