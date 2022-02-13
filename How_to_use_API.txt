@@ -23,13 +23,13 @@ Read all table
 Insert user
 	curl -X post URL-PATH/API/CREATE/<first_name>+<last_name>+<company_name>+<address>
 	
-	Note: The "<fisrt_name>", "<last_name>", "<company_name>" and <address> fields would be 	replaced by the first_name, last_name, company_name, address of the user you need  	to insert
+	Note: The "<fisrt_name>", "<last_name>", "<company_name>" and <address> fields must be 	replaced by the first_name, last_name, company_name, address of the user you need  	to insert
 Delete row especifies by the first_name
 	
 DELETE
 	curl -X post URL-PATH/API/DELETE/<first_name>
 
-	Note: The "<fisrt_name>" field would be replaced by the first_name
+	Note: The "<fisrt_name>" field must be replaced by the first_name
 	attribute of the row you need delete
 CREATE SCHEMA
 	curl -X post URL-PATH/API/CREATESCHEMA/<sn>
@@ -54,10 +54,13 @@ HOW TO CONNECT TO POSTGRES DB to check constraint and schemas
 	
 	FOR CHECK SCHEMAS API WORKS:
 	\dn
+	
+FOR UNIT TESTING AND COVERAGE
+	In the host SO of docker container install python and coverage library 
+	pip install coverage
+	
+	Then in test_coverage>test_cov_api.py you must have to replace URL_API with the current URL-PATH where "web_1".
+
 
 	
-FOR UNIT TESTING
-
--Run de test_api.py in docker host OS. Befor you must set the API_URL variable on the program for the currrent URL-PATH.
-
 
