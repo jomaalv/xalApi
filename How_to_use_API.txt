@@ -32,7 +32,7 @@ DELETE
 	Note: The "<fisrt_name>" field must be replaced by the first_name
 	attribute of the row you need delete
 CREATE SCHEMA
-	curl -X post URL-PATH/API/CREATESCHEMA/<sn>
+	curl -X post URL-PATH/API/CREATES/CHEMA/<sn>
 	
 	Note: The <sn> field must be replaced by the name of your new schema
 	
