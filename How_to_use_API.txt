@@ -56,4 +56,8 @@ HOW TO CONNECT TO POSTGRES DB to check constraint and schemas
 	\dn
 
 	
+FOR UNIT TESTING
+
+-Run de test_api.py in docker host OS. Befor you must set the API_URL variable on the program for the currrent URL-PATH.
+
 
