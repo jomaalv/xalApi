@@ -32,7 +32,7 @@ DELETE
 	Note: The "<fisrt_name>" field must be replaced by the first_name
 	attribute of the row you need delete
 CREATE SCHEMA
-	curl -X post URL-PATH/API/CREATES/CHEMA/<sn>
+	curl -X post URL-PATH/API/CREATE/CHEMA/<sn>
 	
 	Note: The <sn> field must be replaced by the name of your new schema
 	
@@ -42,7 +42,7 @@ UPDATE SCHEMA
 	
 	Note: The <sn> field must be replaced by the SchemaName and <nn> by the new name
 	REOWNER
-	curl -X post URL-PATH/API/RENAME/SCHEMA/<sn>+<no>
+	curl -X post URL-PATH/API/REOWNER/SCHEMA/<sn>+<no>
 	
 	Note: The <sn> field must be replaced by the SchemaName and <no> by the new owner name. The new owner must be created befor use them. If you do not create them before then is going to set by "LOGGIN" only.
 	
