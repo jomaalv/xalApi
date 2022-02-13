@@ -1,0 +1,59 @@
+How to use Xaldigital API from centos
+1-run in console
+	docker-compose up
+2-In other console (but in xaldigital folder)
+	docker-compose run --rm centos bash
+
+3-Now check for the URL where de "web_1" is listen
+  this will be your URL-PATH from now.
+  
+API REQUEST'S with curl command
+Check if API is available with
+	curl URL-PATH/PING
+	
+Read 1 row especifies the first_name
+	curl URL-PATH/API/READ/<first_name>
+	
+	Note: The "<fisrt_name>" field would be replaced by the first_name
+	attribute of the row you need read
+
+Read all table
+	curl URL-PATH/API/READ/ALL
+
+Insert user
+	curl -X post URL-PATH/API/CREATE/<first_name>+<last_name>+<company_name>+<address>
+	
+	Note: The "<fisrt_name>", "<last_name>", "<company_name>" and <address> fields would be 	replaced by the first_name, last_name, company_name, address of the user you need  	to insert
+Delete row especifies by the first_name
+	
+DELETE
+	curl -X post URL-PATH/API/DELETE/<first_name>
+
+	Note: The "<fisrt_name>" field would be replaced by the first_name
+	attribute of the row you need delete
+CREATE SCHEMA
+	curl -X post URL-PATH/API/CREATESCHEMA/<sn>
+	
+	Note: The <sn> field must be replaced by the name of your new schema
+	
+UPDATE SCHEMA
+	RENAME
+	curl -X post URL-PATH/API/RENAME/SCHEMA/<sn>+<nn>
+	
+	Note: The <sn> field must be replaced by the SchemaName and <nn> by the new name
+	REOWNER
+	curl -X post URL-PATH/API/RENAME/SCHEMA/<sn>+<no>
+	
+	Note: The <sn> field must be replaced by the SchemaName and <no> by the new owner name. The new owner must be created befor use them. If you do not create them before then is going to set by "LOGGIN" only.
+	
+HOW TO CONNECT TO POSTGRES DB to check constraint and schemas
+	docker exec -it postgres psql -U postgres -d xaldigit
+	
+	FOR CHECK CONSTRAINT WORKS:
+	INSERT INTO person (first_name, state) VALUES ('Alison', 'A2');
+	
+	FOR CHECK SCHEMAS API WORKS:
+	\dn
+
+	
+

@@ -1,0 +1,39 @@
+version: '3.1'
+services:
+ web:
+     build: .
+     hostname: web
+     ports: 
+         - "5000:5000"
+     volumes:
+         - .:/code
+     environment:
+         FLASK_ENV: development
+     depends_on:
+         - db
+     networks:
+         - postgres
+ db:
+     image: postgres
+     container_name: postgres
+     restart: always
+     environment:
+         - DATABASE_HOST=127.0.0.1
+         - POSTGRES_USER=postgres
+         - POSTGRES_PASSWORD=example
+         
+     ports:
+         - 5432:5432
+     networks:
+         - postgres
+     volumes:
+         - "./sql:/docker-entrypoint-initdb.d"
+ centos:
+     image: centos
+
+     networks:
+         - postgres
+networks:
+ postgres:
+     driver: bridge
+
